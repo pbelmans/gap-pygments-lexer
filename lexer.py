@@ -12,20 +12,28 @@ class GAPLexer(RegexLexer):
     aliases = ['gap']
     filenames = ['*.gap']
     mimetypes = ['text/x-gap']
+    
+    keywords = [
+        "and",     "do",       "elif",   "else",    "end",     "fi",
+        "for",     "function", "if",     "in",      "local",   "mod",
+        "not",     "od",       "or",     "repeat",  "return",  "then",
+        "until",   "while",    "quit",   "QUIT",    "break",   "rec",
+        "continue",
+    ]
 
     tokens = {
         'root': [
-            (r'\s+', Text),
             (r'\'', String, 'string_squote'),
             (r'\"', String, 'string_dquote'),
 
             include('comments'),
             include('delimiters'),
-            include('numbers'),
             include('keywords'),
+            include('numbers'),
             include('operators'),
             include('statements'),
 
+            (r'\ |\t', Text.Whitespace),
             include('identifiers'), # if all else fails it must be an identifier
         ],
         'comments': [
@@ -41,11 +49,7 @@ class GAPLexer(RegexLexer):
             (r'[A-Za-z_0-9]*[A-Za-z_]+[A-Za-z_0-9]*', Name),
         ],
         'keywords': [ # 4.15
-            (r'and|do|elif|else|end|fi' # TODO fi is not highlighted?!
-             r'for|function|if|in|local|mod'
-             r'not|od|or|repeat|return|then'
-             r'until|while|quit|QUIT|break|rec'
-             r'continue',
+            ('(' + '|'.join(keywords) + r')\b',
              Keyword.Reserved),
         ],
         'numbers': [
