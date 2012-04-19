@@ -15,6 +15,8 @@ from pygments.lexer import Lexer, RegexLexer, include, bygroups, using, \
 from pygments.token import Error, Punctuation, Literal, Token, \
      Text, Comment, Operator, Keyword, Name, String, Number, Generic
 
+import classes, functions
+
 __all__ = ['GAPLexer']
 
 class GAPLexer(RegexLexer):
@@ -22,7 +24,7 @@ class GAPLexer(RegexLexer):
     aliases = ['gap']
     filenames = ['*.gap']
     mimetypes = ['text/x-gap']
-    
+
     keywords = [
         "and",     "do",       "elif",   "else",    "end",     "fi",
         "for",     "function", "if",     "in",      "local",   "mod",
@@ -53,14 +55,13 @@ class GAPLexer(RegexLexer):
             (r'~|!.|!\[|\.|\.\.|->|,|;|!\{|\[|\]|\{|\}|\(|\)|:', Punctuation),
         ],
         'identifiers': [ # 4.6
-            (r'Print', Name.Builtin),
-
+            ('(' + '|'.join(functions.functions) + r')\b', Name.Function),
+            ('(' + '|'.join(classes.classes) + r')\b', Name.Class),
             # TODO this is not the complete implementation I ignore identifiers with escaped characters (who uses those?!)
             (r'[A-Za-z_0-9]*[A-Za-z_]+[A-Za-z_0-9]*', Name),
         ],
         'keywords': [ # 4.15
-            ('(' + '|'.join(keywords) + r')\b',
-             Keyword.Reserved),
+            ('(' + '|'.join(keywords) + r')\b', Keyword.Reserved),
         ],
         'numbers': [
             (r'[-]?[0-9]+', Number),
@@ -81,4 +82,5 @@ class GAPLexer(RegexLexer):
             (r'[^\"]*\"', String, '#pop'),
         ],
     }
+
 
