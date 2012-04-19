@@ -41,7 +41,7 @@ class GAPLexer(RegexLexer):
             (r'[A-Za-z_0-9]*[A-Za-z_]+[A-Za-z_0-9]*', Name),
         ],
         'keywords': [ # 4.15
-            (r'and|do|elif|else|end|fi'
+            (r'and|do|elif|else|end|fi' # TODO fi is not highlighted?!
              r'for|function|if|in|local|mod'
              r'not|od|or|repeat|return|then'
              r'until|while|quit|QUIT|break|rec'
@@ -49,7 +49,7 @@ class GAPLexer(RegexLexer):
              Keyword.Reserved),
         ],
         'numbers': [
-            (r'[-]?[0-9]+(?:e[0-9]+)?', Number),
+            (r'[-]?[0-9]+', Number),
         ],
         'operators': [
             (r'=|<>|<|<=|>|>=|in', Operator), # comparisons
