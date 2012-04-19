@@ -1,3 +1,13 @@
+"""
+    pygments.lexers.gap
+    ~~~~~~~~~~~~~~~~~~~~
+
+    Lexer for the GAP language
+
+    :copyright: Copyright 2012 by the Pieter Belmans, see AUTHORS
+    :license: BSD, see LICENSE for details.
+"""
+
 import re
 
 from pygments.lexer import Lexer, RegexLexer, include, bygroups, using, \

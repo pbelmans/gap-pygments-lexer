@@ -1,0 +1,4 @@
+GAPLexer is written and maintained by Pieter Belmans <pieterbelmans@gmail.com>
+
+The list of builtin classes functions and procedures is generated from the GAP
+manual by Wim Thys <wimthys@gmail.com>.

@@ -16,3 +16,8 @@ There is no automated installation available at the moment, but according to som
     'GAPLexer': ('pygments.lexers.gaplexer', 'GAP', ('gap',), ('*.gap',), ('text/x-gap',)),
 
 to the file `_mapping.py` in the `pygments/lexers/` directory and either put the file `gaplexer.py` in that directory or create a soft link to it.
+
+Thanks
+------
+
+The code is based on several of the already existing mathematical lexers from Pygments, as listed in `pygments.lexers.math`. For the list of builtin classes, functions and procedures I am greatly indebted to Wim Thys and his commandline skills.
