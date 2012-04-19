@@ -58,8 +58,6 @@ class GAPLexer(RegexLexer):
         ],
         'statements': [ # 4.13
             (r':=', Operator),                # assignment
-            # TODO calls
-            # TODO semi colon
             # the others are keywords and are already covered
         ],
         'string_squote': [
