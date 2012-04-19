@@ -15,7 +15,7 @@ There is no automated installation available at the moment, but according to som
 
     'GAPLexer': ('pygments.lexers.gaplexer', 'GAP', ('gap',), ('*.gap',), ('text/x-gap',)),
 
-to the file `_mapping.py` in the `pygments/lexers/` directory and either put the file `gaplexer.py` in that directory or create a soft link to it.
+to the file `_mapping.py` in the `pygments/lexers/` directory and either put the files `gaplexer.py`, `functions.py` and `classes.py` in that directory or create a soft link to them.
 
 Thanks
 ------
