@@ -6,16 +6,20 @@ An implementation of a lexer for the GAP language, to be used in the Pygments hi
 * [gap-system.org](http://gap-system.org)
 * [pygments.org](http://pygments.org)
 
-This is very much a work-in-progress and at the moment.
-
 Installation
 ------------
 
-There is no automated installation available at the moment, but according to some of the projects that should be possible. As for now, you have to add the line
+Assuming you already have Pygments installed (otherwise a simple `sudo easy_install Pygments` should suffice, or look at the other options at [pygments.org/docs/installation](http://pygments.org/docs/installation/)), in order to install the GAPLexer package you only need to
 
-    'GAPLexer': ('pygments.lexers.gaplexer', 'GAP', ('gap',), ('*.gap',), ('text/x-gap',)),
+1. `git clone git://github.com/pbelmans/gap-pygments-lexer.git` or download and extract the archive GitHub automatically creates at [this project's Downloads page](https://github.com/pbelmans/gap-pygments-lexer/downloads)
+1. `cd gap-pygments-lexer`
+1. `sudo python setup.py install`
 
-to the file `_mapping.py` in the `pygments/lexers/` directory and either put the files `gaplexer.py`, `functions.py` and `classes.py` in that directory or create a soft link to them.
+
+Remarks
+-------
+
+The list of functions and classes was automatically generated from [GAP's documentation](http://www.gap-system.org/Manuals/doc/htm/ref/chapters.htm), so if functions or classes aren't documented these will not be highlighted.
 
 Thanks
 ------
