@@ -24,4 +24,4 @@ The list of functions and classes was automatically generated from [GAP's docume
 Thanks
 ------
 
-The code is based on several of the already existing mathematical lexers from Pygments, as listed in `pygments.lexers.math`. For the list of builtin classes, functions and procedures I am greatly indebted to Wim Thys and his commandline skills.
+The code is based on several of the already existing mathematical lexers from Pygments, as listed in `pygments.lexers.math`. For the list of builtin classes, functions and procedures I am greatly indebted to [Wim Thys](https://github.com/wthys) and his commandline skills.
