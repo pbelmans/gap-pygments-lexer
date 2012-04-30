@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup( 
     name         = 'GAPLexer', 
-    version      = '1.0', 
+    version      = '1.1', 
     description  = __doc__, 
     author       = "Pieter Belmans", 
     install_requires=['pygments'],

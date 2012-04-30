@@ -58,7 +58,7 @@ class GAPLexer(RegexLexer):
             ('(' + '|'.join(functions.functions) + r')\b', Name.Function),
             ('(' + '|'.join(classes.classes) + r')\b', Name.Class),
             # TODO this is not the complete implementation I ignore identifiers with escaped characters (who uses those?!)
-            (r'[A-Za-z_0-9]*[A-Za-z_]+[A-Za-z_0-9]*', Name),
+            (r'[A-Za-z_0-9]*[A-Za-z_]+[A-Za-z_0-9]*', Name.Variable),
         ],
         'keywords': [ # 4.15
             ('(' + '|'.join(keywords) + r')\b', Keyword.Reserved),
@@ -68,8 +68,9 @@ class GAPLexer(RegexLexer):
         ],
         'operators': [
             (r'=|<>|<|<=|>|>=|in', Operator), # comparisons
+            (r'mod', Operator.Word),
             (r'\+|-|\*|/|mod|\^', Operator),  # arithmetic operators
-            (r'not|and|or', Operator),        # logical operators
+            (r'not|and|or', Operator.Word),        # logical operators
         ],
         'statements': [ # 4.13
             (r':=', Operator),                # assignment
